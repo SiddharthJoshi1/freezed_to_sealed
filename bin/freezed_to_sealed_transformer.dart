@@ -46,17 +46,6 @@ class FreezedToSealedTransformer {
       }
     }
 
-    // Add equality methods
-    //   buffer.writeln('''
-    // @override
-    // bool operator ==(Object other) => identical(this, other) ||
-    //     other is ${node.name} &&
-    //     runtimeType == other.runtimeType;
-
-    // @override
-    // int get hashCode => 0; // TODO: Implement proper hashCode
-    // ''');
-
     return buffer.toString();
   }
 
@@ -130,13 +119,5 @@ class FreezedToSealedTransformer {
       buffer.writeln(');');
     }
     buffer.writeln('}');
-
-    // buffer.write('  const ${constructor.name}(');
-    // if (constructor.parameters.parameters.isNotEmpty) {
-    //   for (final param in constructor.parameters!.parameters) {
-    //     buffer.write('this.${param.name},');
-    //   }
-    // }
-    // buffer.writeln(');');
   }
 }
